@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<link rel="stylesheet" href="ali2.css" />
+	
+	<title>LIGN-IN to Царь-Ali</title>
+</head>
+<body>
+	<div class="all">
+		<div class="secon">
+			<div class="back">
+				<span class="backon"></span>
+				"НАЗАД"
+			</div>
+			<div class="signin-form">
+				<h1>Login to your account</h1>
+				<form method="post" id="signin-form" class="forms" @submit.prevent="submitData" @keyup.tab="submitData" v-if="!hasPasswordForm">
+                <div class="form-item form-item-email">
+                	<div class="login-block">
+                        <input type="text" id="login" name="login" autocapitalize="off" autocorrect="off" autofocus="autofocus" placeholder="E-mail или номер телефона" v-model.trim="textLogin" :disabled="hasAccount" @keyup.enter="submitData" @keydown.tab.prevent="submitData" />                        
+                        <span class="clear-login" v-if="hasAccount" @click="clearLogin"></span>
+                    </div>
+                </div>
+                <h1>Password to your account</h1>
+                 <form method="post" id="signin-form" class="forms" @submit.prevent="submitData" @keyup.tab="submitData" v-if="!hasPasswordForm">
+                <div class="form-item form-item-email">
+                	<div class="login-block">
+                        <input type="text" id="login" name="login" autocapitalize="off" autocorrect="off" autofocus="autofocus" placeholder="Password" v-model.trim="textLogin" :disabled="hasAccount" @keyup.enter="submitData" @keydown.tab.prevent="submitData" />                        
+                        <span class="clear-login" v-if="hasAccount" @click="clearLogin"></span>
+                    </div>
+                </div>
+                <h1>Please write: /I am Not Robot/</h1>
+                 <form method="post" id="signin-form" class="forms" @submit.prevent="submitData" @keyup.tab="submitData" v-if="!hasPasswordForm">
+                <div class="form-item form-item-email">
+                	<div class="login-block">
+                        <input type="text" id="login" name="login" autocapitalize="off" autocorrect="off" autofocus="autofocus" placeholder="Are you Robot?" v-model.trim="textLogin" :disabled="hasAccount" @keyup.enter="submitData" @keydown.tab.prevent="submitData" />                        
+                        <span class="clear-login" v-if="hasAccount" @click="clearLogin"></span>
+                    </div>
+                </div>
+                <div class="login_forgot_wrap">
+        			<div class="checkbox" id="expire" onclick="checkbox(this);ge('expire_input').value=isChecked(this)?1:'';" role="checkbox" aria-checked="false" tabindex="0" style="display: block;">Remember me</div>
+      			</div>
+                <button>GO</button>
+                <p class="inpit">Sign in another way
+                	<img src="http://res.cloudinary.com/dlpzfnigb/image/upload/v1543302752/down-arrow_black.png" class="image_intro" width="10px" height="10px" />
+               	</p>
+		    </div>
+			<button>
+				Registration
+			</button>
+		</div>
+	</div>
+</body>
+</html>
